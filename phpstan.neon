@@ -1,0 +1,20 @@
+includes:
+    - vendor/phpat/phpat/extension.neon
+
+parameters:
+    level: 0
+    paths:
+        - app
+    phpat:
+        ignore_built_in_classes: true
+        show_rule_names: true
+
+services:
+    -
+        class: Tests\Architecture\LayersTest
+        tags:
+            - phpat.test
+    -
+        class: Tests\Architecture\ModulesTest
+        tags:
+            - phpat.test
